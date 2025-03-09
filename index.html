@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서관 좌석 조회</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 30px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        #status, #seatStatus {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📚 도서관 좌석 조회</h1>
+
+    <h2>🔐 로그인</h2>
+    <input type="text" id="userId" placeholder="아이디">
+    <input type="password" id="userPw" placeholder="비밀번호">
+    <button onclick="login()">로그인</button>
+    <p id="status"></p>
+
+    <h2>🎯 좌석 조회 (101, 102 동시에 검색)</h2>
+    <input type="number" id="seatId" placeholder="좌석 번호 입력">
+    <button onclick="checkSeat()">좌석 조회</button>
+    <p id="seatStatus"></p>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
