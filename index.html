@@ -5,36 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>도서관 좌석 조회</title>
     <style>
+        /* ✅ 전체 스타일 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f5f5f7;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 390px; /* 아이폰 15 Pro에 맞춘 너비 */
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
             text-align: center;
-            margin: 30px;
         }
-        input, button {
-            padding: 10px;
-            margin: 5px;
+
+        h1 {
+            font-size: 24px;
+            color: #007aff;
+            margin-bottom: 20px;
         }
-        #status, #seatStatus {
+
+        /* ✅ 입력 필드 */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        /* ✅ 버튼 */
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #007aff;
+            color: white;
             font-size: 18px;
-            margin-top: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #005ecb;
+        }
+
+        /* ✅ 상태 메시지 */
+        #status, #seatStatus {
+            font-size: 16px;
             font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* ✅ 다크 모드 지원 */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #1c1c1e;
+                color: #fff;
+            }
+            .container {
+                background: #2c2c2e;
+                color: #fff;
+            }
+            input {
+                background: #3a3a3c;
+                color: #fff;
+                border: 1px solid #555;
+            }
+            button {
+                background: #0a84ff;
+            }
+            button:hover {
+                background: #0071e3;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>📚 도서관 좌석 조회</h1>
+    <div class="container">
+        <h1>📚 도서관 좌석 조회</h1>
 
-    <h2>🔐 로그인</h2>
-    <input type="text" id="userId" placeholder="아이디">
-    <input type="password" id="userPw" placeholder="비밀번호">
-    <button onclick="login()">로그인</button>
-    <p id="status"></p>
+        <h2>🔐 로그인</h2>
+        <input type="text" id="userId" placeholder="아이디">
+        <input type="password" id="userPw" placeholder="비밀번호">
+        <button onclick="login()">로그인</button>
+        <p id="status"></p>
 
-    <h2>🎯 좌석 조회 (101, 102 동시에 검색)</h2>
-    <input type="number" id="seatId" placeholder="좌석 번호 입력">
-    <button onclick="checkSeat()">좌석 조회</button>
-    <p id="seatStatus"></p>
+        <h2>🎯 좌석 조회 (101, 102 동시에 검색)</h2>
+        <input type="number" id="seatId" placeholder="좌석 번호 입력">
+        <button onclick="checkSeat()">좌석 조회</button>
+        <p id="seatStatus"></p>
+    </div>
 
     <script src="script.js"></script>
 
